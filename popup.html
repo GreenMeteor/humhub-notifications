@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HumHub Notifications</title>
+  <link rel="stylesheet" href="/css/popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>HumHub Notifications</h1>
+      <div class="last-updated" id="lastUpdated"></div>
+    </div>
+
+    <div class="tab-container">
+      <div class="tab active" data-tab="notifications">Notifications</div>
+      <div class="tab" data-tab="settings">Settings</div>
+    </div>
+
+    <div class="tab-content active" id="notifications-tab">
+      <div class="notification-list" id="notificationList">
+        <div class="loading">Loading notifications...</div>
+      </div>
+      <div class="actions">
+        <button id="refreshBtn">Refresh</button>
+        <button id="markAllReadBtn">Mark All Read</button>
+        <button id="openHumHubBtn">Open HumHub</button>
+      </div>
+    </div>
+
+    <div class="tab-content" id="settings-tab">
+      <div class="setting-group">
+        <label for="humhubUrlInput">HumHub URL:</label>
+        <input type="url" id="humhubUrlInput" placeholder="https://yourdomain.com/humhub">
+        <small>Enter your HumHub instance URL</small>
+      </div>
+
+      <div class="setting-group">
+        <label for="authMethodSelect">Authentication Method:</label>
+        <select id="authMethodSelect">
+          <option value="session">Session-based (Login to HumHub in browser)</option>
+          <option value="token">API Token</option>
+          <option value="jwt">JWT Token</option>
+        </select>
+        <small>Choose how to authenticate with your HumHub instance</small>
+      </div>
+
+      <div class="setting-group auth-setting" id="tokenSettingGroup">
+        <label for="authTokenInput">Authentication Token:</label>
+        <input type="password" id="authTokenInput" placeholder="Your HumHub API token">
+        <small>Find this in your HumHub account settings</small>
+      </div>
+
+      <div class="setting-group auth-setting" id="jwtSettingGroup">
+        <label for="jwtTokenInput">JWT Token:</label>
+        <input type="password" id="jwtTokenInput" placeholder="Your HumHub JWT token">
+        <small>Enter your JWT token provided by your HumHub administrator</small>
+      </div>
+
+      <div class="setting-group">
+        <label for="checkIntervalInput">Check Interval (minutes):</label>
+        <input type="number" id="checkIntervalInput" min="1" max="60">
+      </div>
+
+      <div class="setting-group options">
+        <div class="checkbox-group">
+          <input type="checkbox" id="showNotificationsCheckbox">
+          <label for="showNotificationsCheckbox">Show Desktop Notifications</label>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="playSoundCheckbox">
+          <label for="playSoundCheckbox">Play Sound</label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="saveSettingsBtn">Save Settings</button>
+        <button id="testConnectionBtn">Test Connection</button>
+      </div>
+
+      <div class="auth-info session-auth-info">
+        <h3>Using Session Authentication</h3>
+        <p>For session-based authentication to work:</p>
+        <ol>
+          <li>Log in to your HumHub instance in a browser tab</li>
+          <li>Keep the session active</li>
+          <li>The extension will use your active session</li>
+        </ol>
+        <p>This method is simpler but requires you to be logged in.</p>
+      </div>
+
+      <div class="auth-info token-auth-info" style="display: none;">
+        <h3>Using API Token Authentication</h3>
+        <p>To get your API token:</p>
+        <ol>
+          <li>Log in to HumHub</li>
+          <li>Must request token from admin.</li>
+        </ol>
+        <p>This method works even when you're not logged in to HumHub.</p>
+      </div>
+
+      <div class="auth-info jwt-auth-info" style="display: none;">
+        <h3>Using JWT Authentication</h3>
+        <p>To use JWT authentication:</p>
+        <ol>
+          <li>Contact your HumHub administrator to get a JWT token</li>
+          <li>Note that JWT tokens may expire, requiring periodic renewal</li>
+          <li>Paste the complete JWT token in the field above</li>
+        </ol>
+        <p>This method is more secure and works without being logged in.</p>
+      </div>
+    </div>
+  </div>
+  <script src="/js/popup.js"></script>
+</body>
+</html>

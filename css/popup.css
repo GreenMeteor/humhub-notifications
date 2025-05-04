@@ -1,0 +1,214 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  width: 380px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+.header h1 {
+  font-size: 18px;
+  margin: 0;
+  color: #4285F4;
+}
+
+.last-updated {
+  font-size: 12px;
+  color: #757575;
+}
+
+.tab-container {
+  display: flex;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  border-bottom: 2px solid #4285F4;
+  color: #4285F4;
+  font-weight: 500;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.notification-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.notification-item:hover {
+  background-color: #f5f5f5;
+}
+
+.notification-item.unread {
+  background-color: #e8f0fe;
+}
+
+.notification-item .title {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.notification-item .message {
+  font-size: 14px;
+  color: #555;
+}
+
+.notification-item .time {
+  font-size: 12px;
+  color: #757575;
+  margin-top: 4px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #757575;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #757575;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+button {
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+.setting-group {
+  margin-bottom: 16px;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.setting-group input[type="url"],
+.setting-group input[type="password"],
+.setting-group input[type="number"],
+.setting-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.setting-group small {
+  display: block;
+  margin-top: 4px;
+  color: #757575;
+  font-size: 12px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.success-message {
+  color: #388e3c;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.connection-status {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.connection-status.success {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.connection-status.error {
+  background-color: #fde0dc;
+  color: #d32f2f;
+}
+
+.auth-info {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.auth-info h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #4285F4;
+}
+
+.auth-info ol {
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.auth-info li {
+  margin-bottom: 6px;
+}
