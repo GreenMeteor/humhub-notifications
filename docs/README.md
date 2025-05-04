@@ -14,4 +14,4 @@ Get real-time desktop notifications and quick access to your HumHub activity—d
 
 ## 📸 Extension Preview
 
-![Popup UI](assets/screenshot.png)
+![Popup UI](/images/Screenshot_1.png)
