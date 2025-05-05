@@ -1,4 +1,3 @@
-// background.js
 let humhubUrl = '';
 let checkInterval = 1; // minutes
 let lastNotificationCount = 0;
