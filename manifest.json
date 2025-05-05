@@ -7,8 +7,16 @@
     "alarms",
     "storage",
     "notifications",
-    "scripting",
     "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+  {
+    "resources": ["sounds/*.mp3"],
+    "matches": ["<all_urls>"]
+  }
   ],
   "action": {
     "default_popup": "popup.html",
@@ -20,6 +28,6 @@
     }
   },
   "background": {
-    "service_worker": "/js/background.js"
+    "service_worker": "js/background.js"
   }
 }
